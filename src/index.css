@@ -29,7 +29,7 @@ body {
 
 /* additional css */
 .padding-05 {
-  padding: 0.5 em;
+  padding: 0.5em;
 }
 
 .mb-05 {
@@ -42,6 +42,14 @@ body {
 
 .inline {
   display: inline;
+}
+
+.none {
+  display: none;
+}
+
+.block {
+  display: block;
 }
 
 .strong {
@@ -172,7 +180,6 @@ nav {
 
 /* modal css */
 .modal {
-  display: none;
   position: fixed;
   z-index: 1;
   padding: 1.5em;
@@ -182,6 +189,13 @@ nav {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-title {
+  font-family: 'poppins';
+  font-weight: 600;
+  text-align: center;
+  padding: 0.5em;
 }
 
 .modal-content {

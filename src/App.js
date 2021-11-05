@@ -7,6 +7,26 @@ import Modal from "./components/Modal";
 function App() {
   const [movies, setMovies] = useState([]);
   const [openModal, setOpenModal] = useState(false);
+  const [overview, setOverview] = useState({});
+  const [id, setId] = useState();
+
+  useEffect(() => {
+    const getMovie = async () => {
+      const movieFromServer = await fetchMovie();
+      // setOverview(movieFromServer);
+    };
+
+    getMovie();
+    console.log(overview);
+  }, [id]);
+
+  // fetch movie
+  const fetchMovie = async (id) => {
+    const res = await fetch(`http://localhost:5000/movies/${id}`);
+    const data = await res.json();
+    setOverview(data);
+    return data;
+  };
 
   useEffect(() => {
     const getMovies = async () => {
@@ -25,13 +45,12 @@ function App() {
     return data;
   };
 
-  // fetch movie
-  const fetchMovie = async (id) => {
-    const res = await fetch(`http://localhost:5000/movies/${id}`);
-    const data = await res.json();
+  // const fetchMovie = async (id) => {
+  //   const res = await fetch(`http://localhost:5000/movies/${id}`);
+  //   const data = await res.json();
 
-    return data;
-  };
+  //   return data;
+  // };
 
   return (
     <>
@@ -42,8 +61,15 @@ function App() {
           movies={movies}
           openModal={openModal}
           setOpenModal={setOpenModal}
+          fetchMovie={fetchMovie}
           // overview={(id) => console.log(fetchMovie(id))}
         />
+      </div>
+      <div
+        id="movies-container"
+        className={openModal ? "modal block" : "modal none"}
+      >
+        <Modal movie={overview} setOpenModal={setOpenModal} />
       </div>
     </>
   );

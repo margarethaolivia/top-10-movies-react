@@ -3,45 +3,33 @@ import { useState, useEffect } from "react";
 import Modal from "./Modal";
 import { getDefaultNormalizer } from "@testing-library/dom";
 
-const Movies = ({ movies, openModal, setOpenModal }) => {
-  const [overview, setOverview] = useState({});
-  const [id, setId] = useState();
+const Movies = ({ movies, openModal, setOpenModal, fetchMovie }) => {
+  // const [overview, setOverview] = useState({});
+  // const [id, setId] = useState();
 
-  useEffect(() => {
-    const getMovie = async () => {
-      const movieFromServer = await fetchMovie();
-      // setOverview(movieFromServer);
-    };
+  // useEffect(() => {
+  //   const getMovie = async () => {
+  //     const movieFromServer = await fetchMovie();
+  //     // setOverview(movieFromServer);
+  //   };
 
-    getMovie();
-    console.log(overview);
-  }, [id]);
-
-  // fetch movie
-  const fetchMovie = async (id) => {
-    const res = await fetch(`http://localhost:5000/movies/${id}`);
-    const data = await res.json();
-    setOverview(data);
-    return data;
-  };
-
-  // get overview
-  // const getOverview = (id) => {
-  //   setOpenModal(true);
-  //   const data = fetchMovie(id);
-  //   setOverview([data]);
+  //   getMovie();
   //   console.log(overview);
-  // };
+  // }, [id]);
 
-  // const getData = (title, description) => {
-  //   let tempData = [title, description];
-  //   setTempdata([1, ...tempData]);
-  //   return setOpenModal(true);
+  // // fetch movie
+  // const fetchMovie = async (id) => {
+  //   const res = await fetch(`http://localhost:5000/movies/${id}`);
+  //   const data = await res.json();
+  //   setOverview(data);
+  //   return data;
   // };
 
   return (
     <>
-      {openModal && <Modal movie={overview} setOpenModal={setOpenModal} />}
+      {/* <div className="modal">
+        {openModal && <Modal movie={overview} setOpenModal={setOpenModal} />}
+      </div> */}
 
       {movies.map((movie) => (
         <div className="card" key={movie.id}>
