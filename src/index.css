@@ -101,6 +101,24 @@ nav {
   color: var(--clr-gray100);
 }
 
+.nav-btn{
+  font-size: 1em;
+  background-color: var(--clr-card-bg);
+  border: none;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  border-radius: 0.2em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 100ms ease-in;
+}
+
+.nav-btn:hover{
+  opacity: 90%;
+}
+
 /* end nav css */
 
 
