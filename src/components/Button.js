@@ -1,10 +1,12 @@
-const Button = ({ classList, text, onClick }) => {
+const Button = ({ classList, text, color, onClick }) => {
   return (
-    // <a href="/">
-    <button className={classList} onClick={onClick}>
+    <button
+      className={classList}
+      style={{ backgroundColor: color }}
+      onClick={onClick}
+    >
       {text}
     </button>
-    // </a>
   );
 };
 

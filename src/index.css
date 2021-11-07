@@ -163,8 +163,15 @@ nav {
   justify-content: end;
 }
 
+.flex-center {
+  justify-content: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
 .btn {
-  font-size: 1em;
   background-color: var(--clr-primary);
   border: none;
   color: var(--clr-gray100);
@@ -175,6 +182,7 @@ nav {
   display: inline-block;
   cursor: pointer;
 }
+
 
 .badge {
   position: relative;

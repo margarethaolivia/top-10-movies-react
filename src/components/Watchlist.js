@@ -1,17 +1,15 @@
 import Button from "./Button";
 
-const Movies = ({
-  movies,
+const Watchlist = ({
+  watchlist,
   openModal,
   setOpenModal,
   fetchMovie,
-  addWatchlist,
   removeWatchlist,
-  movieInWatchlist,
 }) => {
   return (
     <div className="container" id="movies-container">
-      {movies.map((movie) => (
+      {watchlist.map((movie) => (
         <div className="card" key={movie.id}>
           <img
             src={movie.poster}
@@ -38,18 +36,10 @@ const Movies = ({
             <div className="row flex-center">
               <Button
                 classList="btn"
-                text={
-                  movieInWatchlist(movie)
-                    ? "Remove From Watchlist"
-                    : "Add to Watchlist"
-                }
-                color={movieInWatchlist(movie) ? "#DC3545" : "#198754"}
+                text="Remove From Watchlist"
+                color="#DC3545"
                 onClick={() => {
-                  {
-                    movieInWatchlist(movie)
-                      ? removeWatchlist(movie)
-                      : addWatchlist(movie);
-                  }
+                  removeWatchlist(movie);
                 }}
               />
             </div>
@@ -60,4 +50,4 @@ const Movies = ({
   );
 };
 
-export default Movies;
+export default Watchlist;

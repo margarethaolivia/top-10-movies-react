@@ -1,7 +1,5 @@
 const Modal = ({ movie, setOpenModal }) => {
   return (
-    // <>{console.log(movie)}</>
-
     <div className="modal-content">
       <div className="modal-header">
         <span className="close" onClick={() => setOpenModal(false)}>
