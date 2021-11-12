@@ -1,7 +1,7 @@
 import Button from "./Button";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ length }) => {
   return (
     <nav>
       <ul className="nav-list">
@@ -10,7 +10,7 @@ const Header = () => {
         </li>
         <li className="nav-item">
           <Link to="/watchlist">
-            <Button classList="nav-btn" text="Watchlist" />
+            <Button classList="nav-btn" text={`Watchlist (${length})`} />
           </Link>
         </li>
       </ul>

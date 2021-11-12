@@ -83,7 +83,7 @@ function App() {
 
   return (
     <Router>
-      <Header />
+      <Header length={watchlist.length} />
 
       <Routes>
         <Route
